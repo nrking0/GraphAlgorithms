@@ -14,6 +14,7 @@
 * The dataset may have webpages that do not contain links to anywhere else, so these entries of our map will have empty vectors as their second entries.
 
 ## Graph Algorithms
+* BFS for traversal
 * Dijkstra’s Algorithm
 * Given two specific nodes, we will return the shortest number of edges needed to go from the first given edge to the second given edge.
 * Page Rank
