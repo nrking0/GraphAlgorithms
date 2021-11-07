@@ -27,6 +27,6 @@
 
  ### Signatures
  * Nick King, nrking2
- * 
- * 
+ * Jimmy Huang, jhuan35
+ * Eduardo Palmares, ep7
  * 
