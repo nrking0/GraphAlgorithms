@@ -30,3 +30,10 @@
 *.exe
 *.out
 *.app
+
+_deps/
+
+CMakeFiles/
+main
+CMakeCache.txt
+cmake_install.cmake
