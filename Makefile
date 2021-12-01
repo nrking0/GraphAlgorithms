@@ -129,6 +129,19 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+#=============================================================================
+# Target rules for targets named test
+
+# Build rule for target.
+test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
+.PHONY : test
+
+# fast build rule for target.
+test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+.PHONY : test/fast
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -177,6 +190,54 @@ src/graph.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/graph.cc.s
 .PHONY : src/graph.cc.s
 
+tests/graph_test.o: tests/graph_test.cc.o
+.PHONY : tests/graph_test.o
+
+# target to build an object file
+tests/graph_test.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/graph_test.cc.o
+.PHONY : tests/graph_test.cc.o
+
+tests/graph_test.i: tests/graph_test.cc.i
+.PHONY : tests/graph_test.i
+
+# target to preprocess a source file
+tests/graph_test.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/graph_test.cc.i
+.PHONY : tests/graph_test.cc.i
+
+tests/graph_test.s: tests/graph_test.cc.s
+.PHONY : tests/graph_test.s
+
+# target to generate assembly for a file
+tests/graph_test.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/graph_test.cc.s
+.PHONY : tests/graph_test.cc.s
+
+tests/test_main.o: tests/test_main.cc.o
+.PHONY : tests/test_main.o
+
+# target to build an object file
+tests/test_main.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test_main.cc.o
+.PHONY : tests/test_main.cc.o
+
+tests/test_main.i: tests/test_main.cc.i
+.PHONY : tests/test_main.i
+
+# target to preprocess a source file
+tests/test_main.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test_main.cc.i
+.PHONY : tests/test_main.cc.i
+
+tests/test_main.s: tests/test_main.cc.s
+.PHONY : tests/test_main.s
+
+# target to generate assembly for a file
+tests/test_main.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test_main.cc.s
+.PHONY : tests/test_main.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,12 +247,19 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main"
+	@echo "... test"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
 	@echo "... src/graph.o"
 	@echo "... src/graph.i"
 	@echo "... src/graph.s"
+	@echo "... tests/graph_test.o"
+	@echo "... tests/graph_test.i"
+	@echo "... tests/graph_test.s"
+	@echo "... tests/test_main.o"
+	@echo "... tests/test_main.i"
+	@echo "... tests/test_main.s"
 .PHONY : help
 
 

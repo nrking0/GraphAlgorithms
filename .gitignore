@@ -38,3 +38,4 @@ main
 CMakeCache.txt
 cmake_install.cmake
 .vscode/
+test

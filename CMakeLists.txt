@@ -51,6 +51,8 @@ list(APPEND TEST_FILES tests/graph_test.cc)
 
 
 add_executable(main main.cpp ${SOURCE_FILES})
+add_executable(test tests/test_main.cc ${TEST_FILES})
+target_link_libraries(test PUBLIC catch2)
 target_include_directories(main PRIVATE include)
 
 if(MSVC)
