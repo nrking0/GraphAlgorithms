@@ -26,6 +26,8 @@
 2. **Page Rank**
     * Given a graph, we will return a list of pages ranked based on popularity. Popularity refers to the number of edges connected to a node and the ranking of those    connected nodes. 
     * To use the Google page rank algorithm, we will need to construct a Markov matrix from our adjacency list to represent the probabilities of the nodes that a        given node could go to.
+    * The input would be an adjacency matrix
+    * Effeciency would be **O(N + E)** where N is the number of Nodes and E is the number of edges
   
 ## Timeline
 * Week 1 - Research
