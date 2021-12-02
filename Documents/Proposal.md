@@ -1,7 +1,7 @@
 # Final Project Proposal
 
 ## Leading Question
-* How can we find the shortest path between webpage nodes and also rank them on their popularity?
+* How can what the strongly connected components of a graph are?
 * Given any two specific web pages, what is the exact list of webpages in the shortest path between those two pages?
 * What are the top ten webpages based on our pagerank algorithm?
 
