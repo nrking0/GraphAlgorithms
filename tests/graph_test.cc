@@ -4,7 +4,7 @@
 
 using namespace finalproject;
 
-TEST_CASE("Test") {
+TEST_CASE("Input Operator Test") {
     Graph g(5);
 
     std::ifstream input_file("data/test.txt");
@@ -14,6 +14,4 @@ TEST_CASE("Test") {
     }
 
     REQUIRE(g.isNode(0,1));
-
-    // REQUIRE(5==5);
 }
