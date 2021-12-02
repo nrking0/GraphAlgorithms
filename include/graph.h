@@ -15,6 +15,7 @@ namespace finalproject {
             Graph getTranspose();
             friend istream& operator>>(istream& is, Graph& g);
             void print();
+            bool isNode(int a, int b) const;
 
         private:
             vector<int>* adjacency_list;  

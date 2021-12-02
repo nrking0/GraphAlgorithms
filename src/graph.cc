@@ -71,4 +71,15 @@ namespace finalproject {
         }
     }
 
+
+    bool Graph::isNode(int a, int b) const {
+        if (a > nodes || b > nodes) return false;
+
+        for (int i : adjacency_list[a]) {
+            if (i == b) return true;
+        }
+
+        return false;
+    }
+
 }

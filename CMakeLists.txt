@@ -56,5 +56,5 @@ target_link_libraries(test PUBLIC catch2)
 target_include_directories(main PRIVATE include)
 
 if(MSVC)
-    set_property(TARGET blackjack-test APPEND_STRING PROPERTY LINK_FLAGS " /SUBSYSTEM:CONSOLE")
+    set_property(TARGET test APPEND_STRING PROPERTY LINK_FLAGS " /SUBSYSTEM:CONSOLE")
 endif()
