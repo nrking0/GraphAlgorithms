@@ -1,7 +1,7 @@
 # Final Project Proposal
 
 ## Leading Question
-* How can what the strongly connected components of a graph are?
+* How can we determine what the strongly connected components of a graph are?
 * Given any two specific web pages, what is the exact list of webpages in the shortest path between those two pages?
 * What are the top ten webpages based on our pagerank algorithm?
 
@@ -17,7 +17,7 @@
 * The dataset may have webpages that do not contain links to anywhere else, so these entries of our map will have empty vectors as their second entries.
 
 ## Graph Algorithms
-* DFS for traversal
+* We will be using BFS for our graph traversal. BFS will be used to determine the shortest path between any two specific web pages. We must use BFS as opposed to Dijkstra's since our graph is unweighted.
 1. **Connected Components Algorithm**
     * We will be using Kosaraju's Algorithm
     * This algorithm will traverse through the given graph and then return the different groups of nodes that are grouped as connected components
