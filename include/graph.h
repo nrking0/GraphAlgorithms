@@ -25,7 +25,7 @@ class Graph {
         vector<int>* adjacency_list;  
         int nodes;  
         // Define a source node for the graph. This is changed when BFS is called.
-        int source;
+        int source_;
         // Contains predecessor of every node. Only is populated after BFS is called with an arbitrary source node.
         vector<int> predecessor;
         // Contains distance from arbitrary source to any node. Only is populated after BFS is called with an arbitrary source node.

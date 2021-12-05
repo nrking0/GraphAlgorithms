@@ -13,7 +13,7 @@ Graph::Graph(int nodes) {
     adjacency_list = new std::vector<int>[nodes];
     predecessor.resize(nodes);
     distance.resize(nodes);
-    source = 0;
+    source_ = 0;
 }
 
 Graph::~Graph() {
@@ -97,6 +97,7 @@ int Graph::getNodes() const {
 // Performs BFS starting from whatever source vertex is passed in as a parameter.
 // This function populates the predecessor and distance vectors given the source vertex.
 void Graph::BFS(int source) {
+    source_ = source;
     // Set up data structures. 
     // We will also be using the predecessor and distance vectors, but those have already been resized in the constructor.
     std::queue<int> queue_;
@@ -134,7 +135,7 @@ void Graph::BFS(int source) {
 // Uses the predecessor and distance vectors populated by BFS to show the shortest path 
 // from the source passed into BFS to the destination vertex passed into this function
 void Graph::printShortestPath(int dest) {
-    std::cout << "Distance from " << source << " to " << dest << " is: " << distance[dest] << std::endl;
+    std::cout << "Distance from " << source_ << " to " << dest << " is: " << distance[dest] << std::endl;
     std::vector<int> backwards_path;
     int node = dest;
     while (node != -1) {
@@ -142,7 +143,7 @@ void Graph::printShortestPath(int dest) {
         node = predecessor[node];
     }
 
-    std::cout << "\nShortest path from " << source << " to " << dest << " is: " << std::endl;
+    std::cout << "\nShortest path from " << source_ << " to " << dest << " is: " << std::endl;
     for (int i = backwards_path.size() - 1; i >= 0; --i) {
         std::cout << backwards_path[i] << std::endl;
     }

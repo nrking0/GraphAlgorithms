@@ -38,7 +38,14 @@ int main() {
     g.BFS(0);
     g.printShortestPath(857527);
 
+    std::cout << "\nLet's test out our shortest path function a bit more:\n" << std::endl;
 
+    g.printShortestPath(123782);
+
+    std::cout << "\nLet's do it again after changing the source vertex by calling BFS with a different parameter:\n" << std::endl;
+
+    g.BFS(573863);
+    g.printShortestPath(777293);
 
     return 0;
 }
