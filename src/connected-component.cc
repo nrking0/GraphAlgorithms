@@ -23,11 +23,11 @@ vector<vector<int>> ConnectedComponent::kosaraju(const Graph& g) {
 void ConnectedComponent::visit(int node, const Graph& g) {
     if (!visited[node]) {
         visited[node] = true;
-        vector<int> list = g.getList()->at(node);
+        vector<int> list = g.getList()[node];
         for (int i = 1; i < list.size(); i++) {
             visit(list[i], g);
         }
-        stack.push(node);
+        stack_.push(node);
     }
 }
 
