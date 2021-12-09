@@ -45,7 +45,8 @@ if(NOT catch2_POPULATED)
     target_include_directories(catch2 INTERFACE ${catch2_SOURCE_DIR}/single_include)
 endif()
 
-list(APPEND SOURCE_FILES    src/graph.cc)
+list(APPEND SOURCE_FILES    src/graph.cc
+                            src/connected-component.cc)
 
 list(APPEND TEST_FILES tests/graph_test.cc)
 

@@ -166,6 +166,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/connected-component.o: src/connected-component.cc.o
+.PHONY : src/connected-component.o
+
+# target to build an object file
+src/connected-component.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/connected-component.cc.o
+.PHONY : src/connected-component.cc.o
+
+src/connected-component.i: src/connected-component.cc.i
+.PHONY : src/connected-component.i
+
+# target to preprocess a source file
+src/connected-component.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/connected-component.cc.i
+.PHONY : src/connected-component.cc.i
+
+src/connected-component.s: src/connected-component.cc.s
+.PHONY : src/connected-component.s
+
+# target to generate assembly for a file
+src/connected-component.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/connected-component.cc.s
+.PHONY : src/connected-component.cc.s
+
 src/graph.o: src/graph.cc.o
 .PHONY : src/graph.o
 
@@ -251,6 +275,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/connected-component.o"
+	@echo "... src/connected-component.i"
+	@echo "... src/connected-component.s"
 	@echo "... src/graph.o"
 	@echo "... src/graph.i"
 	@echo "... src/graph.s"

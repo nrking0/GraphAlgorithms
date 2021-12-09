@@ -1,6 +1,8 @@
 #include <iostream>
 #include "include/graph.h"
+#include "include/connected-component.h"
 #include <fstream>
+#include <vector>
 
 using namespace finalproject;
 
@@ -12,7 +14,10 @@ int main() {
         input_file >> g;
         input_file.close();
     }
+    // g.print();
 
-    g.print();
+    ConnectedComponent c;
+    std::vector<std::vector<int>> vec = c.kosaraju(g);
+    std::cout << vec.size() << std::endl;
     return 0;
 }

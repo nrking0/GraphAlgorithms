@@ -40,4 +40,6 @@ cmake_install.cmake
 .vscode/
 test
 
+Makefile
+
 build/

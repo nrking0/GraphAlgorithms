@@ -19,6 +19,7 @@ class ConnectedComponent {
         stack<int> stack;
 
         void visit(int node, const Graph& g);
+        void assign(int node, const Graph& g, vector<int> component);
 };
 
 }

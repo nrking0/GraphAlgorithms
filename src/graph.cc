@@ -21,7 +21,7 @@ void Graph::addEdge(int a, int b) {
     this->adjacency_list[a].push_back(b);
 }
 
-Graph Graph::getTranspose() {
+Graph Graph::getTranspose() const {
     Graph transpose(nodes);
     for (int i = 0; i < nodes; i++) {
         std::vector<int> temp = adjacency_list[i];
