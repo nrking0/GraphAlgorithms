@@ -1,7 +1,7 @@
 #include "../include/connected-component.h"
 #include "../include/graph.h"
 #include <vector>
-#include <stack>
+#include <st>
 
 using namespace std;
 
@@ -23,9 +23,9 @@ vector<vector<int>> ConnectedComponent::kosaraju(const Graph& g) {
     visited = vector<bool>(g.getNodes(), false);
     Graph transpose = g.getTranspose();
 
-    while(!stack.empty()) {
-        int n = stack.top();
-        stack.pop();
+    while(!st.empty()) {
+        int n = st.top();
+        st.pop();
 
         vector<int> component;
         assign(n, transpose, component);
@@ -44,7 +44,7 @@ void ConnectedComponent::visit(int node, const Graph& g) {
         for (int i = 1; i < list.size(); i++) {
             visit(list[i], g);
         }
-        stack.push(node);
+        st.push(node);
     }
 }
 

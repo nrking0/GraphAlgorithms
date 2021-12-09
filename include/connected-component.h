@@ -16,7 +16,7 @@ class ConnectedComponent {
     private:
         vector<vector<int>> components;
         vector<bool> visited;
-        stack<int> stack;
+        stack<int> st;
 
         void visit(int node, const Graph& g);
         void assign(int node, const Graph& g, vector<int> component);
