@@ -27,9 +27,11 @@ vector<vector<int>> ConnectedComponent::kosaraju(const Graph& g) {
         int n = st.top();
         st.pop();
 
-        vector<int> component;
-        assign(n, transpose, component);
-        components.push_back(component);
+        if (!visited[n]) {
+            vector<int> component;
+            assign(n, transpose, component);
+            components.push_back(component);
+        }
 
     }
 
