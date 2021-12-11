@@ -14,6 +14,7 @@ class ConnectedComponent {
         vector<vector<int>> kosaraju(const Graph& g);
         vector<vector<int>> getComponents();
         void print();
+        void printLargest();
         ~ConnectedComponent();
 
     private:
