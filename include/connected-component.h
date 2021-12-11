@@ -12,13 +12,19 @@ class ConnectedComponent {
     public:
         ConnectedComponent();
         vector<vector<int>> kosaraju(const Graph& g);
+        vector<vector<int>> getComponents();
+        void print();
+        ~ConnectedComponent();
 
     private:
-        vector<vector<int>> components;
+        vector<vector<int>>* components;
         vector<bool> visited;
-        stack<int> stack_;
+
+        stack<int>* st;
+
 
         void visit(int node, const Graph& g);
+        void assign(int node, const Graph& g, vector<int>& component);
 };
 
 }

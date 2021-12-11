@@ -12,7 +12,7 @@ class Graph {
         Graph(int nodes);
         ~Graph();
         void addEdge(int a, int b);
-        Graph getTranspose();
+        Graph getTranspose() const;
         friend istream& operator>>(istream& is, Graph& g);
         void print();
         bool isNode(int a, int b) const;

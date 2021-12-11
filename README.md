@@ -1,7 +1,26 @@
-# jhuan35-nrking2-ep7-av13
-Final project for jhuan35-nrking2-ep7-av13
+# CS225 Final Project
+Final project for **jhuan35, nrking2, ep7, and av13**. For this project we created algorithms to analyze web graphs from the [**Stanford Large Network Dataset Collection**](http://snap.stanford.edu/data/). Our data set is in a text file that can be viewed in the directory labeled *"/data"*. Additionally our main project code can be found in three main directories. The header files are in the "*/include*" directory. Our source files are in the "*/src*" directory. Finally, our test files are in the "*/test*" directory. There is additionally, our "*main.cpp*" file on the top-level of the project. All output of this projects puts results directly into the console.
 
-# Running project
-Temporary commands so far to run main.cpp (run these at the root of the directory):
-* g++ src/graph.cc src/connected-component.cc ./main.cpp -o main -std=c++11
-* ./main
+# Running the Project
+This project uses cmake to create a makefile and install catch2. Use the following commands to build and run the project:
+1. `cmake CMakeLists.txt`
+2. `make` (additionally, you may use `make test` or `make main` to make either executable individually)
+3. `./main`
+
+Currently main will ingest the web graph from and run our algorithms on them. There are commented out lines to print more in-depth information that you can uncomment if you would like to print out the nodes of the graph or all of the connected components of the graph. 
+
+
+## Commands to run main if you do not have cmake:
+1. `g++ src/graph.cc src/connected-component.cc ./main.cpp -o main -std=c++11`
+2. `./main`
+
+*Note: Unfortunately, you will not be able to run the testing suite without cmake as cmake is used to install the catch2 dependency.*
+
+
+# Running the Test Suite
+To run the testing suite, follow the same instructions as above to build the make files, then simply run:
+
+1. `make test`
+2. `./test` 
+
+Results of tests should directly be shown in the console.

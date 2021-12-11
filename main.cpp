@@ -1,17 +1,21 @@
 #include <iostream>
 #include "include/graph.h"
+#include "include/connected-component.h"
 #include <fstream>
+#include <vector>
 
 using namespace finalproject;
 
 int main() {
-    Graph g(5105039);
+    Graph g(281903);
+
 
     // if compiling with CMake from the build directory, uncomment the line below:
-    // std::ifstream input_file("../data/web-data.txt");
+    // std::ifstream input_file("../data/web-stanford.txt");
 
     // if compiling with the g++ command on the ReadMe, use the line below:
-    std::ifstream input_file("./data/web-data.txt");
+    std::ifstream input_file("./data/web-stanford.txt");
+
 
     if (input_file.is_open()) {
         input_file >> g;
@@ -46,6 +50,13 @@ int main() {
 
     g.BFS(573863);
     g.printShortestPath(777293);
+
+
+    ConnectedComponent c;
+    std::vector<std::vector<int>> vec = c.kosaraju(g);
+    // c.print();
+    std::cout << "Number of Connected Components: " << vec.size() << std::endl;
+    
 
     return 0;
 }
