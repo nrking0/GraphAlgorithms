@@ -42,3 +42,5 @@ test
 
 build/
 Makefile
+
+Dockerfile

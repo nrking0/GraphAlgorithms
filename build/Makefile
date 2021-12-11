@@ -172,6 +172,7 @@ src/connected-component.o: src/connected-component.cc.o
 # target to build an object file
 src/connected-component.cc.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/connected-component.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/connected-component.cc.o
 .PHONY : src/connected-component.cc.o
 
 src/connected-component.i: src/connected-component.cc.i
@@ -180,6 +181,7 @@ src/connected-component.i: src/connected-component.cc.i
 # target to preprocess a source file
 src/connected-component.cc.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/connected-component.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/connected-component.cc.i
 .PHONY : src/connected-component.cc.i
 
 src/connected-component.s: src/connected-component.cc.s
@@ -188,6 +190,7 @@ src/connected-component.s: src/connected-component.cc.s
 # target to generate assembly for a file
 src/connected-component.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/connected-component.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/connected-component.cc.s
 .PHONY : src/connected-component.cc.s
 
 src/graph.o: src/graph.cc.o
@@ -196,6 +199,7 @@ src/graph.o: src/graph.cc.o
 # target to build an object file
 src/graph.cc.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/graph.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/graph.cc.o
 .PHONY : src/graph.cc.o
 
 src/graph.i: src/graph.cc.i
@@ -204,6 +208,7 @@ src/graph.i: src/graph.cc.i
 # target to preprocess a source file
 src/graph.cc.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/graph.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/graph.cc.i
 .PHONY : src/graph.cc.i
 
 src/graph.s: src/graph.cc.s
@@ -212,6 +217,7 @@ src/graph.s: src/graph.cc.s
 # target to generate assembly for a file
 src/graph.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/graph.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/graph.cc.s
 .PHONY : src/graph.cc.s
 
 tests/graph_test.o: tests/graph_test.cc.o
