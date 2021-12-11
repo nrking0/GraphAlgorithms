@@ -11,10 +11,10 @@ int main() {
 
 
     // if compiling with CMake from the build directory, uncomment the line below:
-    // std::ifstream input_file("../data/web-stanford.txt");
+    std::ifstream input_file("../data/web-stanford.txt");
 
     // if compiling with the g++ command on the ReadMe, use the line below:
-    std::ifstream input_file("./data/web-stanford.txt");
+    // std::ifstream input_file("./data/web-stanford.txt");
 
 
     if (input_file.is_open()) {
