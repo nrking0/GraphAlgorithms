@@ -6,3 +6,6 @@ During week two, we recieved feedback on our proposal and realized that our data
 
 # Week 3
 For week 3 we finalized our new ideas for the adapted project proposal. We decided the an algorithm that identifies strongly connected components in a graph would be a great replacement for Dijkstra's Algorithm. We started research on this new algorithm and how it could be implemented for our projects. Additionally, we began implementing the graph class in the project. The graph was represented with an adjacency list. Additionally, we overloaded the insertion operator so that a graph could easily be converted from a text file into the graph class. 
+
+# Week 4
+For week 4 we started working on implementing algorithms. We started development of the connected components algorithm. More specifically we used Kosaraju's algorithm that uses two DFS traversals of the graph to identify all of the different connected components in the graph. Additionally, we created a shortest path algorithm utilizing a BFS traversal of the graph. This will return the shortest path between any two nodes of the graph. Finally, we also started work on building out some tests for the different algorithms that we were implementing.
