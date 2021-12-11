@@ -7,17 +7,20 @@
 using namespace finalproject;
 
 int main() {
-    Graph g(5105039);
+    Graph g(281903);
 
-    std::ifstream input_file("../data/web-data.txt");
+    std::ifstream input_file("data/web-stanford.txt");
     if (input_file.is_open()) {
         input_file >> g;
         input_file.close();
     }
+
     // g.print();
 
     ConnectedComponent c;
     std::vector<std::vector<int>> vec = c.kosaraju(g);
-    std::cout << vec.size() << std::endl;
+    // c.print();
+    std::cout << "Number of Connected Components: " << vec.size() << std::endl;
+    
     return 0;
 }

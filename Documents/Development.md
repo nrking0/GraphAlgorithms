@@ -3,3 +3,6 @@ For this week we started off by creating the team contract and deciding on the b
 
 # Week 2
 During week two, we recieved feedback on our proposal and realized that our dataset being unweighted made Dijkstra's Algorithm not sensible as a choice for one of our algorithms. We spent time discussing how we would want to move forward. We ended up deciding to stick with the current data set and picking a new algorithm that could work with an unweighted dataset. We discussed did research into the other listed algorithms that were suggested so we could plan out a new propsal to work on. 
+
+# Week 3
+For week 3 we finalized our new ideas for the adapted project proposal. We decided the an algorithm that identifies strongly connected components in a graph would be a great replacement for Dijkstra's Algorithm. We started research on this new algorithm and how it could be implemented for our projects. Additionally, we began implementing the graph class in the project. The graph was represented with an adjacency list. Additionally, we overloaded the insertion operator so that a graph could easily be converted from a text file into the graph class. 
