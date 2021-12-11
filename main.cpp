@@ -70,7 +70,7 @@ int main() {
 
     
 
-    PageRank * pr = new PageRank(g);
-    pr->test();
+    PageRank pr(g);
+    pr.printInitialValues();
     return 0;
 }

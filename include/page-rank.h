@@ -14,12 +14,14 @@ class PageRank {
     PageRank();
     ~PageRank();
     PageRank(const Graph g);
+    void printInitialValues();
+
 
     private:
-    vector<vector<double>> transition_matrix;
-    vector<double> init_pr_vec;
+    vector<vector<long double>> transition_matrix;
+    vector<long double> init_pr_vec;
     vector<int>* comp;
-    int num_of_nodes
+    int num_of_nodes;
 };
 
 }
