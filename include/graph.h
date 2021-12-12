@@ -14,6 +14,7 @@ class Graph {
         void addEdge(int a, int b);
         Graph getTranspose() const;
         friend istream& operator>>(istream& is, Graph& g);
+        friend ostream& operator<<(ostream& os, Graph& g);
         void print();
         bool isNode(int a, int b) const;
         vector<int>* getList() const;

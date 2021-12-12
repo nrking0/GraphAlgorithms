@@ -65,6 +65,17 @@ std::istream& operator>>(istream& is, Graph& g) {
     return is;
 }
 
+std::ostream& operator<<(ostream& os, Graph& g) {
+    for (int i = 0; i < g.getNodes(); i++) {
+        std::vector<int> temp = g.getList()[i];
+        for (int j : temp) {
+            os << "(" << i << ", " << j << ")" << std::endl;
+        }
+    }
+
+    return os;
+}
+
 
 void Graph::print() {
     for (int i = 0; i < nodes; i++) {

@@ -23,7 +23,7 @@ int main() {
     }
     
     // Uncomment to see printing of all nodes of graph
-    // g.print();
+    // std::cout << g;
 
     std::vector<int>* adj_list = g.getList();
 
@@ -61,8 +61,8 @@ int main() {
     // c.print();
     // Uncomment the line below to view the largest connected component and its size
     // c.printLargest();
+    std::cout << "Number of Nodes in Graph: " << g.getNodes() << std::endl;
     std::cout << "Number of Connected Components: " << vec.size() << std::endl;
     
-
     return 0;
 }

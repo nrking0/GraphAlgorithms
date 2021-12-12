@@ -48,7 +48,8 @@ endif()
 list(APPEND SOURCE_FILES    src/graph.cc
                             src/connected-component.cc)
 
-list(APPEND TEST_FILES tests/graph_test.cc)
+list(APPEND TEST_FILES  tests/graph_test.cc
+                        tests/component_test.cc)
 
 
 add_executable(main main.cpp ${SOURCE_FILES})
