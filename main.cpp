@@ -55,9 +55,9 @@ int main() {
     std::cout << "\nPrint out all nodes in entire graph:\n" << std::endl;
 
     std::vector<int> traversal = g.bfsAll();
-    for (int node : traversal) {
-        std::cout << node << ", ";
-    }
+    // for (int node : traversal) {
+    //     std::cout << node << ", ";
+    // }
     std::cout << "\n\nWe traversed a total of " << traversal.size() << " nodes" << std::endl;
 
     std::cout << "\n\n\nTesting Kosaraju's:" << std::endl;
@@ -71,6 +71,87 @@ int main() {
     // c.printLargest();
     std::cout << "Number of Strongly Connected Components: " << vec.size() << std::endl;
     
+
+
+
+
+    // Test basic matrix functionality.
+    std::cout << "\n\n\nTesting basic matrix functionality:\n\n\n";
+    Graph g2(3);
+    g2.addEdge(0,1);
+    g2.addEdge(1,0);
+    g2.addEdge(1,2);
+    g2.addEdge(2,0);
+
+    g2.makeMatrix();
+    g2.printMatrix();
+    
+    std::cout << std::endl;
+
+    g2.makeMarkov();
+    g2.printMatrix();
+
+
+
+
+    std::cout << "\n\n\nTesting basic matrix functionality with another small graph:\n\n\n";
+    Graph g3(4);
+    g3.addEdge(0,1);
+    g3.addEdge(0,3);
+    g3.addEdge(1,2);
+    g3.addEdge(1,3);
+    g3.addEdge(2,0);
+
+    g3.makeMatrix();
+    g3.printMatrix();
+
+    std::cout << std::endl;
+
+    g3.makeMarkov();
+    g3.printMatrix();
+
+
+
+    // Based on testing this out in Python, the final steady-state vector should be:
+    // [0.23076923 0.15384615 0.30769231 0.30769231]
+    std::cout << "\n\n\nTest pagerank on small 4x4 matrix:\n\n\n";
+    Graph g4(4);
+    g4.addEdge(0,1);
+    g4.addEdge(0,2);
+    g4.addEdge(0,3);
+    g4.addEdge(1,3);
+    g4.addEdge(3,0);
+    g4.addEdge(3,2);
+
+    g4.makeMatrix();
+    g4.printMatrix();
+
+    std::cout << std::endl;
+
+    g4.makeMarkov();
+    g4.printMatrix();
+
+    std::cout << std::endl;
+
+    std::vector<double> start_vector{0.25, 0.25, 0.25, 0.25};
+
+    std::vector<double> steady_state_vector = g4.pagerank(start_vector);
+    for (double d : steady_state_vector) {
+        std::cout << d << ", ";
+    }
+    std::cout << "\n\n\n";
+
+
+
+    // std::cout <<"\nFinally, let's run pagerank on the entire graph:\n" << std::endl;
+    // g.makeMatrix();
+    // g.makeMarkov();
+    // std::vector<double> initial_vector(281903, 1.0 / 281903.0);
+    // std::vector<double> final_vector = g.pagerank(initial_vector);
+    // for (double d : final_vector) {
+    //     std::cout << d << ", ";
+    // }
+
 
     return 0;
 }
