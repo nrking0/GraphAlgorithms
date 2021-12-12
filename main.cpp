@@ -30,11 +30,11 @@ int main() {
     // Let's look at the neighbors of the first node, as well as the neighbors of the last neighbor of the first node,
     // to help us test our shortest path function
     std::cout << "\nNeighbors of node 1:" << std::endl;
-    for (int i = 0; i < adj_list[1].size(); ++i) {
+    for (int i = 0; i < (int) adj_list[1].size(); ++i) {
         std::cout << adj_list[1][i] << std::endl;
     }
     std::cout << "\nNeighbors of node 15409:" << std::endl;
-    for (int i = 0; i < adj_list[15409].size(); ++i) {
+    for (int i = 0; i < (int) adj_list[15409].size(); ++i) {
         std::cout << adj_list[15409][i] << std::endl;
     }
 
@@ -52,16 +52,24 @@ int main() {
     g.BFS(105318);
     g.printShortestPath(36606);
 
-    std::cout <<std::endl;
+    std::cout << "\nPrint out all nodes in entire graph:\n" << std::endl;
+
+    std::vector<int> traversal = g.bfsAll();
+    for (int node : traversal) {
+        std::cout << node << ", ";
+    }
+    std::cout << "\n\nWe traversed a total of " << traversal.size() << " nodes" << std::endl;
+
+    std::cout << "\n\n\nTesting Kosaraju's:" << std::endl;
 
 
     ConnectedComponent c;
     std::vector<std::vector<int>> vec = c.kosaraju(g);
-    // Uncomment to see all connected components printed out
+    // Uncomment to see all strongly connected components printed out
     // c.print();
-    // Uncomment the line below to view the largest connected component and its size
+    // Uncomment the line below to view the largest strongly connected component and its size
     // c.printLargest();
-    std::cout << "Number of Connected Components: " << vec.size() << std::endl;
+    std::cout << "Number of Strongly Connected Components: " << vec.size() << std::endl;
     
 
     return 0;

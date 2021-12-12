@@ -113,22 +113,26 @@ void Graph::BFS(int source) {
     // Perform traversal while populating our predecessor and distance vectors
     int curr = 0;
     int neighbor = 0;
+    int count = 0;
     while (!queue_.empty()) {
         curr = queue_.front();
         queue_.pop();
         // We can process the node "curr" right here if we want (like printing it out)
         // std::cout << curr << std::endl;
         
-        for (int i = 0; i < adjacency_list[curr].size(); ++i) {
+        for (int i = 0; i < (int) adjacency_list[curr].size(); ++i) {
             neighbor = adjacency_list[curr][i];
             if (visited[neighbor] == false) {
                 visited[neighbor] = true;
                 queue_.push(neighbor);
                 predecessor[neighbor] = curr;
                 distance[neighbor] = distance[curr] + 1;
+                ++count;
             }
         }
     }
+
+    // std::cout << "We traversed a total of " << count << " nodes" << std::endl;
 }
 
 // This function can ONLY be called after BFS is called.
@@ -146,6 +150,50 @@ void Graph::printShortestPath(int dest) {
     std::cout << "\nShortest path from " << source_ << " to " << dest << " is: " << std::endl;
     for (int i = backwards_path.size() - 1; i >= 0; --i) {
         std::cout << backwards_path[i] << std::endl;
+    }
+}
+
+std::vector<int> Graph::bfsAll() {
+    std::vector<int> traversal;
+
+    std::vector<bool> visited;
+    visited.resize(nodes);
+
+    for (int i = 0; i < nodes; ++i) {
+        if (visited[i] == false) {
+            BFS(i, visited, traversal);
+        }
+    }
+
+    return traversal;
+}
+
+// Overloaded private helper function only used for bfsAll
+void Graph::BFS(int source, vector<bool>& visited, vector<int>& traversal) {
+    source_ = source;
+    std::queue<int> queue_;
+
+    visited[source] = true;
+    queue_.push(source);
+    predecessor[source] = -1;
+    distance[source] = 0;
+
+    int curr = 0;
+    int neighbor = 0;
+    while (!queue_.empty()) {
+        curr = queue_.front();
+        queue_.pop();
+        // Add node to "traversal" vector
+        traversal.push_back(curr);
+        for (int i = 0; i < (int) adjacency_list[curr].size(); ++i) {
+            neighbor = adjacency_list[curr][i];
+            if (visited[neighbor] == false) {
+                visited[neighbor] = true;
+                queue_.push(neighbor);
+                predecessor[neighbor] = curr;
+                distance[neighbor] = distance[curr] + 1;
+            }
+        }
     }
 }
 
