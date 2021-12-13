@@ -110,6 +110,8 @@ int Graph::getNodes() const {
 std::vector<int> Graph::BFS(int source) {
     std::vector<int> to_return;
     source_ = source;
+    predecessor = std::vector<int>(nodes, -1);
+    distance = std::vector<int>(nodes, 0);
 
     // Set up data structures. 
     // We will also be using the predecessor and distance vectors, but those have already been resized in the constructor.
