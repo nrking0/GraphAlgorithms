@@ -160,6 +160,7 @@ TEST_CASE("Test BFS") {
             REQUIRE(our_traversal_1[i] == correct_traversal_1[i]);
         }
 
+        // Traverse the other component starting from node 1
         std::vector<int> correct_traversal_2{1, 5, 8, 4, 9, 7, 12};
         std::vector<int> our_traversal_2 = g.BFS(1);
         for (int i = 0; i < (int) our_traversal_2.size(); ++i) {

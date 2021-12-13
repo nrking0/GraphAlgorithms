@@ -22,7 +22,7 @@ namespace finalproject {
 Graph::Graph(int nodes) {
     this->nodes = nodes;
     adjacency_list = new std::vector<int>[nodes];
-    predecessor.resize(nodes);
+    predecessor = std::vector<int>(nodes, -1);
     distance.resize(nodes);
     source_ = 0;
 }
@@ -147,11 +147,17 @@ std::vector<int> Graph::BFS(int source) {
     return to_return;
 }
 
-// This function can ONLY be called after BFS is called.
+// This function can ONLY be called after BFS or bfsAll is called.
 // Uses the predecessor and distance vectors populated by BFS to show the shortest path 
 // from the source passed into BFS to the destination vertex passed into this function
 std::vector<int> Graph::getShortestPath(int dest) {
     std::vector<int> backwards_path;
+
+    // Return empty vector if there is no path from source_ to dest
+    if (predecessor[dest] == -1) {
+        return backwards_path;
+    }
+
     int node = dest;
     while (node != -1) {
         backwards_path.push_back(node);
