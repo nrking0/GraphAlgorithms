@@ -7,12 +7,7 @@
 using namespace finalproject;
 
 int main() {
-
-
-    /*
-
     Graph g(281903);
-
 
     // if compiling with CMake from the build directory, uncomment the line below:
     std::ifstream input_file("../data/web-stanford.txt");
@@ -20,16 +15,15 @@ int main() {
     // if compiling with the g++ command on the ReadMe, use the line below:
     // std::ifstream input_file("./data/web-stanford.txt");
 
-
     if (input_file.is_open()) {
         input_file >> g;
         input_file.close();
     }
 
-    
-    
     // Uncomment to see printing of all nodes of graph
     // g.print();
+
+    // BFS stuff
 
     std::vector<int>* adj_list = g.getList();
 
@@ -44,7 +38,7 @@ int main() {
         std::cout << adj_list[15409][i] << std::endl;
     }
 
-    std::cout << "\nSo, the shortest path from 0 to 13102 should have a distance of 2, and the middle node in the path sequence should be through 15409:\n" << std::endl;
+    std::cout << "\nSo, the shortest path from 0 to 13102 should have a distance of 2,\n and the middle node in the path sequence should be through 15409:\n" << std::endl;
 
     g.BFS(1);
     g.printShortestPath(13102);
@@ -53,7 +47,7 @@ int main() {
 
     g.printShortestPath(6548);
 
-    std::cout << "\nLet's do it again after changing the source vertex by calling BFS with a different parameter:\n" << std::endl;
+    std::cout << "\nLet's do it again after changing the source vertex \nby calling BFS with a different parameter:\n" << std::endl;
 
     g.BFS(105318);
     g.printShortestPath(36606);
@@ -61,10 +55,15 @@ int main() {
     std::cout << "\nPrint out all nodes in entire graph:\n" << std::endl;
 
     std::vector<int> traversal = g.bfsAll();
-    // for (int node : traversal) {
-    //     std::cout << node << ", ";
-    // }
+    for (int node : traversal) {
+        std::cout << node << ", ";
+    }
     std::cout << "\n\nWe traversed a total of " << traversal.size() << " nodes" << std::endl;
+
+
+    // Kosaraju stuff
+
+    /*
 
     std::cout << "\n\n\nTesting Kosaraju's:" << std::endl;
 
@@ -77,9 +76,11 @@ int main() {
     // c.printLargest();
     std::cout << "Number of Strongly Connected Components: " << vec.size() << std::endl;
     
+    */
 
+    // Matrix stuff
 
-
+    /*
 
     // Test basic matrix functionality.
     std::cout << "\n\n\nTesting basic matrix functionality:\n\n\n";
@@ -97,9 +98,6 @@ int main() {
     g2.makeMarkov();
     g2.printMatrix();
 
-
-
-
     std::cout << "\n\n\nTesting basic matrix functionality with another small graph:\n\n\n";
     Graph g3(4);
     g3.addEdge(0,1);
@@ -115,8 +113,6 @@ int main() {
 
     g3.makeMarkov();
     g3.printMatrix();
-
-
 
     // Based on testing this out in Python, the final steady-state vector should be:
     // [0.23076923 0.15384615 0.30769231 0.30769231]
@@ -147,12 +143,6 @@ int main() {
     }
     std::cout << "\n\n\n";
 
-
-
-
-
-
-
     // std::cout <<"\nFinally, let's run pagerank on the entire graph:\n" << std::endl;
 
     // g.makeMatrix();
@@ -164,13 +154,11 @@ int main() {
     //     std::cout << d << ", ";
     // }
 
-
-
-    
     */
 
+   // PageRank stuff
 
-
+   /*
 
     Graph g7(10000);
 
@@ -192,6 +180,7 @@ int main() {
     }
     std::cout << "Sum of entries of steady-state vector is: " << sum << std::endl;
 
+    */
 
     return 0;
 }
