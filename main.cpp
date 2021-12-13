@@ -73,57 +73,10 @@ int main() {
     // c.printLargest();
     //std::cout << "Number of Connected Components: " << vec.size() << std::endl;
 
-    // Vector<long double, Dynamic> v(4);
-    // for (int i = 0; i < v.size(); i++) {
-    //     v[i] = 0.25;
-    // }
-    //std::cout << v << std::endl;
-
-    // SparseMatrix<long double> T(4, 4);
-
-    // T.coeffRef(1, 0) = (long double) 1/3;
-    // T.coeffRef(2, 0) = (long double) 1/3;
-    // T.coeffRef(3, 0) = (long double) 1/3;
-    // // T.coeffRef(0, 1) = 0.5;
-    // T.coeffRef(3, 1) = 1;
-
-    // T.coeffRef(0, 2) = 0.25;
-    // T.coeffRef(1, 2) = 0.25;
-    // T.coeffRef(2, 2) = 0.25;
-    // T.coeffRef(3, 2) = 0.25;
-
-
-    // T.coeffRef(0, 3) = 0.5;
-    // T.coeffRef(2, 3) = 0.5;
-
-    // std::cout << T << std::endl;
-    // std::cout << v << std::endl;
-
-    // long double error = 1;
-    // long double tol = 1e-7;
-    // unsigned count = 0;
-
-    // while (error > tol) {
-    //     long double temp1 = v[0]; long double temp2 = v[1]; long double temp3 = v[2]; long double temp4 = v[3];
-
-    //     v = T * v;
-    //     error = (std::abs(temp1 - v[0]) + std::abs(temp2 - v[1]) + std::abs(temp3 - v[2]) + std::abs(temp4 - v[3]))/4;
-
-    //     std::cout << "Iteration " << count << ": \n" << std::endl;
-    //     std::cout << "           Vector: [" << v.transpose() << "] \n" << std::endl;
-    //     std::cout << "           Error v[0]: " << std::abs(temp1 - v[0]) << std::endl;
-    //     std::cout << "           Error v[1]: " << std::abs(temp2 - v[1]) << std::endl;
-    //     std::cout << "           Error v[2]: " << std::abs(temp3 - v[2]) << std::endl;
-    //     std::cout << "           Error v[3]: " << std::abs(temp4 - v[3]) << std::endl << "\n";
-    //     std::cout << "           Average Error: " <<  error << "\n" << std::endl; 
-
-    //     count++;
-    // }
-
+    //**************************************************************
 
     Graph p(4);
     std::ifstream input("../data/test-small-pr.txt");
-
     if (input.is_open()) {
         input >> p;
         input.close();
@@ -131,6 +84,21 @@ int main() {
 
     PageRank r(p, false, 1000);
     r.runPageRank();
+    r.printInitialValues();
+    
+    //**************************************************************
+
+    Graph g(281903);
+    std::ifstream input_file("../data/web-stanford.txt");
+    if (input_file.is_open()) {
+        input_file >> g;
+        input_file.close();
+    }
+
+    PageRank stan(g, true, 1000);
+    stan.runPageRank();
+    stan.printInitialValues();
+
 
     return 0;
 }
