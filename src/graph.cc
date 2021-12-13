@@ -27,10 +27,10 @@ Graph::Graph(int nodes) {
     source_ = 0;
 }
 
-// Graph::~Graph() {
-//     delete[] adjacency_list;
-//     adjacency_list = nullptr;
-// }
+Graph::~Graph() {
+    delete[] adjacency_list;
+    // adjacency_list = nullptr;
+}
 
 void Graph::addEdge(int a, int b) {
     this->adjacency_list[a].push_back(b);

@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
-#include "/home/ep7/cs225git/eigen-3.4.0/Eigen/Sparse"
+#include "../eigen-3.4.0/Eigen/Sparse"
 
 using namespace std;
 

@@ -18,20 +18,20 @@
 #include <fstream>
 #include <vector>
 #include <cmath>
-#include "/home/ep7/cs225git/eigen-3.4.0/Eigen/Sparse"
+#include "../eigen-3.4.0/Eigen/Sparse"
 
 using namespace finalproject;
 
 using namespace Eigen;
 
 int main() {
-    // Graph g(281903);
+    Graph g(281903);
 
     // if compiling with CMake from the build directory, uncomment the line below:
-    // std::ifstream input_file("../data/web-stanford.txt");
+    std::ifstream input_file("../data/web-stanford.txt");
 
     // if compiling with the g++ command on the ReadMe, use the line below:
-    //std::ifstream input_file("./data/web-stanford.txt");
+    // std::ifstream input_file("./data/web-stanford.txt");
 
     if (input_file.is_open()) {
         input_file >> g;
@@ -45,7 +45,7 @@ int main() {
 
 
 
-    //std::vector<int>* adj_list = g.getList();
+    std::vector<int>* adj_list = g.getList();
 
     // Let's look at the neighbors of the first node, as well as the neighbors of the last neighbor of the first node,
     // to help us test our shortest path function
@@ -108,6 +108,11 @@ int main() {
 
     //std::cout << "Number of Connected Components: " << vec.size() << std::endl;
 
+    std::cout << "Number of Nodes in Graph: " << g.getNodes() << std::endl;
+    std::cout << "Number of Connected Components: " << vec.size() << std::endl;
+
+    std::cout << std::endl;
+
     //**************************************************************
 
     Graph p(4);
@@ -123,12 +128,12 @@ int main() {
     
     //**************************************************************
 
-    Graph g(281903);
-    std::ifstream input_file("../data/web-stanford.txt");
-    if (input_file.is_open()) {
-        input_file >> g;
-        input_file.close();
-    }
+    // Graph g(281903);
+    // std::ifstream input_file("../data/web-stanford.txt");
+    // if (input_file.is_open()) {
+    //     input_file >> g;
+    //     input_file.close();
+    // }
 
     PageRank stan(g, true, 1000);
     stan.runPageRank();
@@ -136,7 +141,7 @@ int main() {
 
 
 
-    std::cout << "Number of Strongly Connected Components: " << vec.size() << std::endl;
+    // std::cout << "Number of Strongly Connected Components: " << vec.size() << std::endl;
     
     
 
@@ -248,8 +253,7 @@ int main() {
     */
 
 
-    std::cout << "Number of Nodes in Graph: " << g.getNodes() << std::endl;
-    std::cout << "Number of Connected Components: " << vec.size() << std::endl;
+   
     
     return 0;
 }
