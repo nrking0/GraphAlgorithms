@@ -2,6 +2,7 @@
 #include "../include/graph.h"
 #include <fstream>
 #include <vector>
+#include <sstream>
 
 using namespace finalproject;
 
@@ -29,13 +30,18 @@ TEST_CASE("Basic graph test") {
         REQUIRE(vec[1][0] == 2);
     }
 
-    SECTION("Test printing") {
+    SECTION("Test printing & Output Operator") {
         Graph g(5);
 
         g.addEdge(1,2);
         g.addEdge(0,1);
 
-        g.print();
+        stringstream s;
+        s << g;
+
+        string str = s.str();
+
+        REQUIRE(str == "(0, 1)\n(1, 2)\n");
     }
 }
 
