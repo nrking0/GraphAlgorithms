@@ -134,6 +134,12 @@ int main() {
     g3.makeMarkov();
     g3.printMatrix();
 
+    */
+
+    // PageRank stuff
+
+    /*
+
     // Based on testing this out in Python, the final steady-state vector should be:
     // [0.23076923 0.15384615 0.30769231 0.30769231]
     std::cout << "\n\n\nTest pagerank on small 4x4 matrix:\n\n\n";
@@ -174,11 +180,7 @@ int main() {
     //     std::cout << d << ", ";
     // }
 
-    */
-
-   // PageRank stuff
-
-   /*
+    // Let's try PageRank on this smaller Wikipedia graph instead:
 
     Graph g7(10000);
 
