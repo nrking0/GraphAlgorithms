@@ -57,10 +57,6 @@ class Graph {
          */
         friend istream& operator>>(istream& is, Graph& g);
 
-        /**
-         * @brief Prints out all the edges of the entire adjacency list in numerical order. This is not a traversal.
-         * 
-         */
         void print();
 
         /**

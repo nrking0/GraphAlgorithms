@@ -34,7 +34,7 @@ int main() {
     }
 
     // Uncomment to see printing of all nodes of graph
-    // g.print();
+    // std::cout << g;
 
     // BFS stuff
 
@@ -99,6 +99,7 @@ int main() {
     // c.print();
     // Uncomment the line below to view the largest strongly connected component and its size
     // c.printLargest();
+
     std::cout << "Number of Strongly Connected Components: " << vec.size() << std::endl;
     
     
@@ -209,5 +210,9 @@ int main() {
 
     */
 
+
+    std::cout << "Number of Nodes in Graph: " << g.getNodes() << std::endl;
+    std::cout << "Number of Connected Components: " << vec.size() << std::endl;
+    
     return 0;
 }

@@ -243,6 +243,30 @@ src/graph.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/graph.cc.s
 .PHONY : src/graph.cc.s
 
+tests/component_test.o: tests/component_test.cc.o
+.PHONY : tests/component_test.o
+
+# target to build an object file
+tests/component_test.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/component_test.cc.o
+.PHONY : tests/component_test.cc.o
+
+tests/component_test.i: tests/component_test.cc.i
+.PHONY : tests/component_test.i
+
+# target to preprocess a source file
+tests/component_test.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/component_test.cc.i
+.PHONY : tests/component_test.cc.i
+
+tests/component_test.s: tests/component_test.cc.s
+.PHONY : tests/component_test.s
+
+# target to generate assembly for a file
+tests/component_test.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/component_test.cc.s
+.PHONY : tests/component_test.cc.s
+
 tests/graph_test.o: tests/graph_test.cc.o
 
 .PHONY : tests/graph_test.o
@@ -316,6 +340,9 @@ help:
 	@echo "... src/graph.o"
 	@echo "... src/graph.i"
 	@echo "... src/graph.s"
+	@echo "... tests/component_test.o"
+	@echo "... tests/component_test.i"
+	@echo "... tests/component_test.s"
 	@echo "... tests/graph_test.o"
 	@echo "... tests/graph_test.i"
 	@echo "... tests/graph_test.s"
