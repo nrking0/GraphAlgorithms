@@ -1,3 +1,11 @@
+/**
+ * @file connected-component.cc
+ * @author Nick King (nrking2), Jimmy Huang (jhuan35), Eduardo Palmares (ep7), Abhyudhaya Venkatasubramanian (av13)
+ * @brief Implementation of all functions declared in connected-component.h.
+ * @date 2021-12-12
+ * 
+ */
+
 #include "../include/connected-component.h"
 #include "../include/graph.h"
 #include <vector>
@@ -11,14 +19,12 @@ namespace finalproject {
 ConnectedComponent::ConnectedComponent() {
     components = new vector<vector<int>>();
     st = new stack<int>();
- }
+}
 
- ConnectedComponent::~ConnectedComponent() {
+ConnectedComponent::~ConnectedComponent() {
      delete components;
      delete st;
- }
-
-
+}
 
 vector<vector<int>> ConnectedComponent::kosaraju(const Graph& g) {
     visited.clear();
@@ -47,17 +53,19 @@ vector<vector<int>> ConnectedComponent::kosaraju(const Graph& g) {
     return *components; 
 }
 
+// Visit node and all its neighbors
 void ConnectedComponent::visit(int node, const Graph& g) {
     if (!visited[node]) {
         visited[node] = true;
         vector<int>& list = g.getList()[node];
-        for (int i = 0; i < list.size(); i++) {
+        for (int i = 0; i < (int) list.size(); i++) {
             visit(list[i], g);
         }
         st->push(node);
     }
 }
 
+// Recursive helper function to help determine components
 void ConnectedComponent::assign(int node, const Graph& g, vector<int>& component) {
     if (!visited[node]) {
         visited[node] = true;
@@ -70,7 +78,6 @@ void ConnectedComponent::assign(int node, const Graph& g, vector<int>& component
     }
 }
 
-
 vector<vector<int>> ConnectedComponent::getComponents() {
     return *components;
 }
@@ -81,7 +88,7 @@ void ConnectedComponent::print() {
         cout << "(";
         int i = 0;
         for (int a : vec) {
-            if (i == vec.size() - 1) cout << a;
+            if (i == (int) vec.size() - 1) cout << a;
             else cout << a << ", ";
             i++;
         }
@@ -95,19 +102,19 @@ void ConnectedComponent::printLargest() {
     int index = 0;
     int maxIndex = 0;
      for (vector<int> vec : *components) {
-        if (vec.size() > max) {
+        if ((int) vec.size() > max) {
             max = vec.size();
             maxIndex = index;
         }
         index++;
     }
-
-    cout << "The largest component has a size of " << max << "nodes. The component contains the following nodes:";
+    
+    cout << "The largest strongly connected component has a size of " << max << " nodes. The component contains the following nodes:";
     cout << "(";
         int i = 0;
         vector<int> vec = components->at(maxIndex);
         for (int a : vec) {
-            if (i == vec.size() - 1) cout << a;
+            if (i == (int) vec.size() - 1) cout << a;
             else cout << a << ", ";
             i++;
         }
