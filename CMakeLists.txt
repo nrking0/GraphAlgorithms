@@ -46,9 +46,11 @@ if(NOT catch2_POPULATED)
 endif()
 
 list(APPEND SOURCE_FILES    src/graph.cc
-                            src/connected-component.cc)
+                            src/connected-component.cc
+                            src/page-rank.cc)
 
-list(APPEND TEST_FILES tests/graph_test.cc)
+list(APPEND TEST_FILES  tests/graph_test.cc
+                        tests/pagerank_test.cc)
 
 
 add_executable(main main.cpp ${SOURCE_FILES})

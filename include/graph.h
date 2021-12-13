@@ -10,7 +10,7 @@ namespace finalproject {
 class Graph {
     public:
         Graph(int nodes);
-        ~Graph();
+        // ~Graph();
         void addEdge(int a, int b);
         Graph getTranspose() const;
         friend istream& operator>>(istream& is, Graph& g);

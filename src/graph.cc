@@ -16,10 +16,10 @@ Graph::Graph(int nodes) {
     source_ = 0;
 }
 
-Graph::~Graph() {
-    delete[] adjacency_list;
-    adjacency_list = nullptr;
-}
+// Graph::~Graph() {
+//     delete[] adjacency_list;
+//     adjacency_list = nullptr;
+// }
 
 void Graph::addEdge(int a, int b) {
     this->adjacency_list[a].push_back(b);
@@ -119,7 +119,7 @@ void Graph::BFS(int source) {
         // We can process the node "curr" right here if we want (like printing it out)
         // std::cout << curr << std::endl;
         
-        for (int i = 0; i < adjacency_list[curr].size(); ++i) {
+        for (unsigned int i = 0; i < adjacency_list[curr].size(); ++i) {
             neighbor = adjacency_list[curr][i];
             if (visited[neighbor] == false) {
                 visited[neighbor] = true;

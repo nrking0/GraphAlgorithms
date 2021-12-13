@@ -51,7 +51,7 @@ void ConnectedComponent::visit(int node, const Graph& g) {
     if (!visited[node]) {
         visited[node] = true;
         vector<int>& list = g.getList()[node];
-        for (int i = 0; i < list.size(); i++) {
+        for (unsigned int i = 0; i < list.size(); i++) {
             visit(list[i], g);
         }
         st->push(node);
@@ -79,8 +79,8 @@ void ConnectedComponent::print() {
     for (vector<int> vec : *components) {
         if (vec.size() <= 1) continue;
         cout << "(";
-        int i = 0;
-        for (int a : vec) {
+        unsigned int i = 0;
+        for (unsigned int a : vec) {
             if (i == vec.size() - 1) cout << a;
             else cout << a << ", ";
             i++;
@@ -91,7 +91,7 @@ void ConnectedComponent::print() {
 }
 
 void ConnectedComponent::printLargest() {
-    int max = 0;
+    unsigned int max = 0;
     int index = 0;
     int maxIndex = 0;
      for (vector<int> vec : *components) {
@@ -104,9 +104,9 @@ void ConnectedComponent::printLargest() {
 
     cout << "The largest component has a size of " << max << "nodes. The component contains the following nodes:";
     cout << "(";
-        int i = 0;
+        unsigned int i = 0;
         vector<int> vec = components->at(maxIndex);
-        for (int a : vec) {
+        for (unsigned int a : vec) {
             if (i == vec.size() - 1) cout << a;
             else cout << a << ", ";
             i++;
