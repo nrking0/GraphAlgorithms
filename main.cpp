@@ -1,3 +1,14 @@
+/**
+ * @file main.cpp
+ * @author your name (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2021-12-12
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #include <iostream>
 #include "include/graph.h"
 #include "include/connected-component.h"
@@ -38,27 +49,36 @@ int main() {
         std::cout << adj_list[15409][i] << std::endl;
     }
 
-    std::cout << "\nSo, the shortest path from 0 to 13102 should have a distance of 2,\n and the middle node in the path sequence should be through 15409:\n" << std::endl;
+    std::cout << "\nSo, the shortest path from 1 to 13102 should have a distance of 2,\nand the middle node in the path sequence should be through 15409:\n" << std::endl;
 
-    g.BFS(1);
-    g.printShortestPath(13102);
+    std::vector<int> traversal_1 = g.BFS(1);
+    std::vector<int> path_1 = g.getShortestPath(13102);
+    for (int i : path_1) {
+        std::cout << i << std::endl;
+    }
 
-    std::cout << "\nLet's test out our shortest path function a bit more:\n" << std::endl;
+    std::cout << "\nLet's test out our shortest path function a bit more\nby making sure that the shortest path from 1 to 6548 has length 1:\n" << std::endl;
 
-    g.printShortestPath(6548);
+    std::vector<int> path_2 = g.getShortestPath(6548);
+    for (int i : path_2) {
+        std::cout << i << std::endl;
+    }
 
-    std::cout << "\nLet's do it again after changing the source vertex \nby calling BFS with a different parameter:\n" << std::endl;
+    std::cout << "\nLet's do it again after changing the source vertex \nby calling BFS with the start node as 105318,\nand then seeing what the shortest path to 36606 is:" << std::endl;
 
-    g.BFS(105318);
-    g.printShortestPath(36606);
+    std::vector<int> traversal_2 = g.BFS(105318);
+    std::vector<int> path_3 = g.getShortestPath(36606);
+    for (int i : path_3) {
+        std::cout << i << std::endl;
+    }
 
     std::cout << "\nPrint out all nodes in entire graph:\n" << std::endl;
 
-    std::vector<int> traversal = g.bfsAll();
-    for (int node : traversal) {
-        std::cout << node << ", ";
-    }
-    std::cout << "\n\nWe traversed a total of " << traversal.size() << " nodes" << std::endl;
+    std::vector<int> traversal_all = g.bfsAll();
+    // for (int node : traversal_all) {
+    //     std::cout << node << ", ";
+    // }
+    std::cout << "\n\nWe traversed a total of " << traversal_all.size() << " nodes" << std::endl;
 
 
     // Kosaraju stuff

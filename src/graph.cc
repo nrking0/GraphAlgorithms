@@ -1,3 +1,14 @@
+/**
+ * @file graph.cc
+ * @author your name (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2021-12-12
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #include "../include/graph.h"
 #include <vector>
 #include <iostream>
@@ -96,8 +107,10 @@ int Graph::getNodes() const {
 
 // Performs BFS starting from whatever source vertex is passed in as a parameter.
 // This function populates the predecessor and distance vectors given the source vertex.
-void Graph::BFS(int source) {
+std::vector<int> Graph::BFS(int source) {
+    std::vector<int> to_return;
     source_ = source;
+
     // Set up data structures. 
     // We will also be using the predecessor and distance vectors, but those have already been resized in the constructor.
     std::queue<int> queue_;
@@ -118,8 +131,7 @@ void Graph::BFS(int source) {
         curr = queue_.front();
         queue_.pop();
         // We can process the node "curr" right here if we want (like printing it out)
-        // std::cout << curr << std::endl;
-        
+        to_return.push_back(curr);
         for (int i = 0; i < (int) adjacency_list[curr].size(); ++i) {
             neighbor = adjacency_list[curr][i];
             if (visited[neighbor] == false) {
@@ -132,14 +144,13 @@ void Graph::BFS(int source) {
         }
     }
 
-    // std::cout << "We traversed a total of " << count << " nodes" << std::endl;
+    return to_return;
 }
 
 // This function can ONLY be called after BFS is called.
 // Uses the predecessor and distance vectors populated by BFS to show the shortest path 
 // from the source passed into BFS to the destination vertex passed into this function
-void Graph::printShortestPath(int dest) {
-    std::cout << "Distance from " << source_ << " to " << dest << " is: " << distance[dest] << std::endl;
+std::vector<int> Graph::getShortestPath(int dest) {
     std::vector<int> backwards_path;
     int node = dest;
     while (node != -1) {
@@ -147,10 +158,12 @@ void Graph::printShortestPath(int dest) {
         node = predecessor[node];
     }
 
-    std::cout << "\nShortest path from " << source_ << " to " << dest << " is: " << std::endl;
+    std::vector<int> to_return;
     for (int i = backwards_path.size() - 1; i >= 0; --i) {
-        std::cout << backwards_path[i] << std::endl;
+        to_return.push_back(backwards_path[i]);
     }
+
+    return to_return;
 }
 
 std::vector<int> Graph::bfsAll() {

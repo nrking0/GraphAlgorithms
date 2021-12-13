@@ -95,3 +95,10 @@ TEST_CASE("Test getTranspose") {
     REQUIRE(t.isNode(2,1));
     REQUIRE(t.isNode(1,0));
 }
+
+TEST_CASE("Test BFS") {
+    SECTION("Small 1") {
+        Graph g(5);
+        
+    }
+}

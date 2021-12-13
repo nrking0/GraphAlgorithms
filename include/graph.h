@@ -1,3 +1,14 @@
+/**
+ * @file graph.h
+ * @author your name (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2021-12-12
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #pragma once
 
 #include <vector>
@@ -19,8 +30,8 @@ class Graph {
         vector<int>* getList() const;
         int getNodes() const;
         // General BFS function used to traverse from an arbitrary node
-        void BFS(int source);
-        void printShortestPath(int dest);
+        vector<int> BFS(int source);
+        vector<int> getShortestPath(int dest);
         // Complete BFS traversal of entire graph and returns vector of nodes in order of traversal
         vector<int> bfsAll();
 
