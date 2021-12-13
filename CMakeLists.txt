@@ -50,7 +50,7 @@ list(APPEND SOURCE_FILES    src/graph.cc
                             src/page-rank.cc)
 
 list(APPEND TEST_FILES  tests/graph_test.cc
-                        tests/pagerank_test.cc)
+                        tests/pagerank_test.cc
                         tests/component_test.cc)
 
 

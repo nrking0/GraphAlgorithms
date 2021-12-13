@@ -220,6 +220,32 @@ src/graph.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/graph.cc.s
 .PHONY : src/graph.cc.s
 
+src/page-rank.o: src/page-rank.cc.o
+.PHONY : src/page-rank.o
+
+# target to build an object file
+src/page-rank.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/page-rank.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/page-rank.cc.o
+.PHONY : src/page-rank.cc.o
+
+src/page-rank.i: src/page-rank.cc.i
+.PHONY : src/page-rank.i
+
+# target to preprocess a source file
+src/page-rank.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/page-rank.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/page-rank.cc.i
+.PHONY : src/page-rank.cc.i
+
+src/page-rank.s: src/page-rank.cc.s
+.PHONY : src/page-rank.s
+
+# target to generate assembly for a file
+src/page-rank.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/page-rank.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/page-rank.cc.s
+.PHONY : src/page-rank.cc.s
 
 tests/component_test.o: tests/component_test.cc.o
 .PHONY : tests/component_test.o
@@ -270,7 +296,6 @@ tests/graph_test.cc.s:
 .PHONY : tests/graph_test.cc.s
 
 tests/pagerank_test.o: tests/pagerank_test.cc.o
-
 .PHONY : tests/pagerank_test.o
 
 # target to build an object file
@@ -279,7 +304,6 @@ tests/pagerank_test.cc.o:
 .PHONY : tests/pagerank_test.cc.o
 
 tests/pagerank_test.i: tests/pagerank_test.cc.i
-
 .PHONY : tests/pagerank_test.i
 
 # target to preprocess a source file
@@ -288,7 +312,6 @@ tests/pagerank_test.cc.i:
 .PHONY : tests/pagerank_test.cc.i
 
 tests/pagerank_test.s: tests/pagerank_test.cc.s
-
 .PHONY : tests/pagerank_test.s
 
 # target to generate assembly for a file
@@ -339,6 +362,9 @@ help:
 	@echo "... src/graph.o"
 	@echo "... src/graph.i"
 	@echo "... src/graph.s"
+	@echo "... src/page-rank.o"
+	@echo "... src/page-rank.i"
+	@echo "... src/page-rank.s"
 	@echo "... tests/component_test.o"
 	@echo "... tests/component_test.i"
 	@echo "... tests/component_test.s"
