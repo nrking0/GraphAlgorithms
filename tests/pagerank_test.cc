@@ -68,10 +68,10 @@ TEST_CASE("PageRank Small Test") {
         r.runPageRank();
         Vector<long double, Dynamic> i_vec = r.getInitVec();
         
-        REQUIRE((double)i_vec[0] == 0.12); 
-        REQUIRE((double)i_vec[1] == 0.24); 
-        REQUIRE((double)i_vec[2] == 0.24); 
-        REQUIRE((double)i_vec[3] == 0.40); 
+        REQUIRE((double)i_vec[0] == Approx(0.12).epsilon(0.1)); 
+        REQUIRE((double)i_vec[1] == Approx(0.24).epsilon(0.1)); 
+        REQUIRE((double)i_vec[2] == Approx(0.24).epsilon(0.1)); 
+        REQUIRE((double)i_vec[3] == Approx(0.40).epsilon(0.1)); 
 
     }
 }
