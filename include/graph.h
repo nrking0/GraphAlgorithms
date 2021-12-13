@@ -56,6 +56,7 @@ class Graph {
          * @return istream& 
          */
         friend istream& operator>>(istream& is, Graph& g);
+        friend ostream& operator<<(ostream& os, Graph& g);
 
         void print();
 
