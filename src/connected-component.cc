@@ -1,3 +1,11 @@
+/**
+ * @file connected-component.cc
+ * @author Nick King (nrking2), Jimmy Huang (jhuan35), Eduardo Palmares (ep7), Abhyudhaya Venkatasubramanian (av13)
+ * @brief Implementation of all functions declared in connected-component.h.
+ * @date 2021-12-12
+ * 
+ */
+
 #include "../include/connected-component.h"
 #include "../include/graph.h"
 #include <vector>
@@ -11,14 +19,12 @@ namespace finalproject {
 ConnectedComponent::ConnectedComponent() {
     components = new vector<vector<int>>();
     st = new stack<int>();
- }
+}
 
- ConnectedComponent::~ConnectedComponent() {
+ConnectedComponent::~ConnectedComponent() {
      delete components;
      delete st;
- }
-
-
+}
 
 vector<vector<int>> ConnectedComponent::kosaraju(const Graph& g) {
     visited.clear();
@@ -47,6 +53,7 @@ vector<vector<int>> ConnectedComponent::kosaraju(const Graph& g) {
     return *components; 
 }
 
+// Visit node and all its neighbors
 void ConnectedComponent::visit(int node, const Graph& g) {
     if (!visited[node]) {
         visited[node] = true;
@@ -58,6 +65,7 @@ void ConnectedComponent::visit(int node, const Graph& g) {
     }
 }
 
+// Recursive helper function to help determine components
 void ConnectedComponent::assign(int node, const Graph& g, vector<int>& component) {
     if (!visited[node]) {
         visited[node] = true;
@@ -69,7 +77,6 @@ void ConnectedComponent::assign(int node, const Graph& g, vector<int>& component
         }
     }
 }
-
 
 vector<vector<int>> ConnectedComponent::getComponents() {
     return *components;

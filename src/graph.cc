@@ -1,11 +1,8 @@
 /**
  * @file graph.cc
- * @author your name (you@domain.com)
- * @brief 
- * @version 0.1
+ * @author Nick King (nrking2), Jimmy Huang (jhuan35), Eduardo Palmares (ep7), Abhyudhaya Venkatasubramanian (av13)
+ * @brief Implementation of all functions declared in graph.h.
  * @date 2021-12-12
- * 
- * @copyright Copyright (c) 2021
  * 
  */
 
@@ -19,6 +16,9 @@
 
 namespace finalproject {
 
+// Initialize predecessor vector with -1 for every node.
+// Initialize distance vector with 0 for every node.
+// Set source_ as 0 by default
 Graph::Graph(int nodes) {
     this->nodes = nodes;
     adjacency_list = new std::vector<int>[nodes];
@@ -44,7 +44,6 @@ Graph Graph::getTranspose() const {
             transpose.addEdge(j, i);
         }
     }
-
     return transpose;
 }
 
@@ -53,6 +52,7 @@ std::istream& operator>>(istream& is, Graph& g) {
     while (std::getline(is, curr_line)) {
         std::vector<int> nodes;
 
+        // Read in digits one by one
         std::string num = "";
         for (char c : curr_line) {
             if (std::isdigit(c)) {
@@ -70,12 +70,12 @@ std::istream& operator>>(istream& is, Graph& g) {
             num = "";
         }
 
+        // Make edge from first number to second number
         g.addEdge(nodes[0], nodes[1]);
     }
 
     return is;
 }
-
 
 void Graph::print() {
     for (int i = 0; i < nodes; i++) {
@@ -85,7 +85,6 @@ void Graph::print() {
         }
     }
 }
-
 
 bool Graph::isNode(int a, int b) const {
     if (a > nodes || b > nodes) return false;
@@ -109,12 +108,14 @@ int Graph::getNodes() const {
 // This function populates the predecessor and distance vectors given the source vertex.
 std::vector<int> Graph::BFS(int source) {
     std::vector<int> to_return;
+
+    // Set source_ private variable and reset predecessor and distance vectors
     source_ = source;
     predecessor = std::vector<int>(nodes, -1);
     distance = std::vector<int>(nodes, 0);
 
     // Set up data structures. 
-    // We will also be using the predecessor and distance vectors, but those have already been resized in the constructor.
+    // We will also be using the predecessor and distance vectors, but those have already been set.
     std::queue<int> queue_;
     std::vector<bool> visited;
     visited.resize(nodes);
@@ -150,7 +151,7 @@ std::vector<int> Graph::BFS(int source) {
 }
 
 // This function can ONLY be called after BFS or bfsAll is called.
-// Uses the predecessor and distance vectors populated by BFS to show the shortest path 
+// Uses the predecessor and distance vectors populated by BFS to get the shortest path 
 // from the source passed into BFS to the destination vertex passed into this function
 std::vector<int> Graph::getShortestPath(int dest) {
     std::vector<int> backwards_path;
@@ -160,12 +161,14 @@ std::vector<int> Graph::getShortestPath(int dest) {
         return backwards_path;
     }
 
+    // Keep following the predecessor vector starting from the node dest
     int node = dest;
     while (node != -1) {
         backwards_path.push_back(node);
         node = predecessor[node];
     }
 
+    // Reverse the backwards_path vector
     std::vector<int> to_return;
     for (int i = backwards_path.size() - 1; i >= 0; --i) {
         to_return.push_back(backwards_path[i]);
@@ -174,6 +177,9 @@ std::vector<int> Graph::getShortestPath(int dest) {
     return to_return;
 }
 
+
+// Uses the private helper BFS function to run BFS on every single node. 
+// In contrast, the BFS(int source) function only traverses one weakly connected component.
 std::vector<int> Graph::bfsAll() {
     std::vector<int> traversal;
 
@@ -233,7 +239,6 @@ void Graph::makeMatrix() {
     for (int i = 0; i < nodes; ++i) {
         for (int j = 0; j < (int) adjacency_list[i].size(); ++j) {
             matrix[adjacency_list[i][j]][i] = 1.0;
-            //matrix[i][adjacency_list[i][j]] = 1.0;
         }
     }
 }

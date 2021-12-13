@@ -1,11 +1,13 @@
 /**
  * @file main.cpp
- * @author your name (you@domain.com)
- * @brief 
- * @version 0.1
+ * @author Nick King (nrking2), Jimmy Huang (jhuan35), Eduardo Palmares (ep7), Abhyudhaya Venkatasubramanian (av13)
+ * @brief Informally tests all the major functionalities of this project. These functionalities include:
+ * - Creating a graph from the Stanford web dataset
+ * - Finding the shortest path between any 2 nodes
+ * - Traversing the whole graph with BFS
+ * - Finding the strongly connected components with Kosaraju's algorithm
+ * - Finding the most important nodes with the Page Rank algorithm
  * @date 2021-12-12
- * 
- * @copyright Copyright (c) 2021
  * 
  */
 
@@ -35,6 +37,8 @@ int main() {
     // g.print();
 
     // BFS stuff
+
+
 
     std::vector<int>* adj_list = g.getList();
 
@@ -81,9 +85,10 @@ int main() {
     std::cout << "\n\nWe traversed a total of " << traversal_all.size() << " nodes" << std::endl;
 
 
+
     // Kosaraju stuff
 
-    /*
+    
 
     std::cout << "\n\n\nTesting Kosaraju's:" << std::endl;
 
@@ -96,9 +101,9 @@ int main() {
     // c.printLargest();
     std::cout << "Number of Strongly Connected Components: " << vec.size() << std::endl;
     
-    */
+    
 
-    // Matrix stuff
+    // Matrix stuff... might delete
 
     /*
 
@@ -136,7 +141,7 @@ int main() {
 
     */
 
-    // PageRank stuff
+    // PageRank stuff... might delete
 
     /*
 
