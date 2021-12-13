@@ -220,6 +220,7 @@ src/graph.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/graph.cc.s
 .PHONY : src/graph.cc.s
 
+
 tests/component_test.o: tests/component_test.cc.o
 .PHONY : tests/component_test.o
 
@@ -267,6 +268,33 @@ tests/graph_test.s: tests/graph_test.cc.s
 tests/graph_test.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/graph_test.cc.s
 .PHONY : tests/graph_test.cc.s
+
+tests/pagerank_test.o: tests/pagerank_test.cc.o
+
+.PHONY : tests/pagerank_test.o
+
+# target to build an object file
+tests/pagerank_test.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/pagerank_test.cc.o
+.PHONY : tests/pagerank_test.cc.o
+
+tests/pagerank_test.i: tests/pagerank_test.cc.i
+
+.PHONY : tests/pagerank_test.i
+
+# target to preprocess a source file
+tests/pagerank_test.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/pagerank_test.cc.i
+.PHONY : tests/pagerank_test.cc.i
+
+tests/pagerank_test.s: tests/pagerank_test.cc.s
+
+.PHONY : tests/pagerank_test.s
+
+# target to generate assembly for a file
+tests/pagerank_test.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/pagerank_test.cc.s
+.PHONY : tests/pagerank_test.cc.s
 
 tests/test_main.o: tests/test_main.cc.o
 .PHONY : tests/test_main.o
@@ -317,6 +345,9 @@ help:
 	@echo "... tests/graph_test.o"
 	@echo "... tests/graph_test.i"
 	@echo "... tests/graph_test.s"
+	@echo "... tests/pagerank_test.o"
+	@echo "... tests/pagerank_test.i"
+	@echo "... tests/pagerank_test.s"
 	@echo "... tests/test_main.o"
 	@echo "... tests/test_main.i"
 	@echo "... tests/test_main.s"
