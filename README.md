@@ -4,7 +4,7 @@ Final project for **jhuan35, nrking2, ep7, and av13**. For this project we creat
 # Running the Project
 This project uses cmake to create a makefile and install catch2. Use the following commands to build and run the project:
 1. `cd build`
-2. `cmake ..`
+2. `cmake ..` (need to use cmake3 instead if on EWS)
 3. `make` (additionally, you may use `make test` or `make main` to make either executable individually)
 4. `./main`
 
