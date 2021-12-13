@@ -55,4 +55,4 @@ The following image shows the connected components algorithm running on our grap
 
 You can review the tests that we wrote for our algorithms and code by reviewing the "/test" directory. Our code has passed all of our test cases. We have ensured that tests pass on our local computers as well as on EWS.
 
-![image](./images/test.png)
+![image](./images/test.PNG)
