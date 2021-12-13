@@ -30,7 +30,7 @@ class Graph {
         void printMatrix();
         vector<double> matrixVectorMultiply(vector<double>& x);
 
-        vector<double> pagerank(vector<double>& x);
+        vector<double> pagerank();
 
     private:
         vector<int>* adjacency_list;  

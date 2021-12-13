@@ -7,6 +7,10 @@
 using namespace finalproject;
 
 int main() {
+
+
+    /*
+
     Graph g(281903);
 
 
@@ -21,6 +25,8 @@ int main() {
         input_file >> g;
         input_file.close();
     }
+
+    
     
     // Uncomment to see printing of all nodes of graph
     // g.print();
@@ -143,14 +149,48 @@ int main() {
 
 
 
+
+
+
+
     // std::cout <<"\nFinally, let's run pagerank on the entire graph:\n" << std::endl;
+
     // g.makeMatrix();
     // g.makeMarkov();
     // std::vector<double> initial_vector(281903, 1.0 / 281903.0);
+
     // std::vector<double> final_vector = g.pagerank(initial_vector);
     // for (double d : final_vector) {
     //     std::cout << d << ", ";
     // }
+
+
+
+    
+    */
+
+
+
+
+    Graph g7(10000);
+
+    std::ifstream ifs("../data/wiki-Vote.txt");
+
+    if (ifs.is_open()) {
+        ifs >> g7;
+        ifs.close();
+    }
+
+    g7.makeMatrix();
+    g7.makeMarkov();
+
+    double sum = 0.0;
+    std::vector<double> final_vector = g7.pagerank();
+    for (double d : final_vector) {
+        std::cout << d << ", ";
+        sum += d;
+    }
+    std::cout << "Sum of entries of steady-state vector is: " << sum << std::endl;
 
 
     return 0;

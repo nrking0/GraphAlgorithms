@@ -212,6 +212,7 @@ void Graph::makeMatrix() {
     for (int i = 0; i < nodes; ++i) {
         for (int j = 0; j < (int) adjacency_list[i].size(); ++j) {
             matrix[adjacency_list[i][j]][i] = 1.0;
+            //matrix[i][adjacency_list[i][j]] = 1.0;
         }
     }
 }
@@ -270,8 +271,8 @@ std::vector<double> Graph::matrixVectorMultiply(vector<double>& x) {
 }
 
 // Input is an arbitrary starting vector whose sum is 1
-std::vector<double> Graph::pagerank(vector<double>& start) {
-    std::vector<double> steady_state_vector = start;
+std::vector<double> Graph::pagerank() {
+    std::vector<double> steady_state_vector;
 
     // Initialize vector arbitrarily (but it's sum must be 1)
     for (int i = 0; i < nodes; ++i) {
