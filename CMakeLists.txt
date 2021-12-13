@@ -51,6 +51,7 @@ list(APPEND SOURCE_FILES    src/graph.cc
 
 list(APPEND TEST_FILES  tests/graph_test.cc
                         tests/pagerank_test.cc)
+                        tests/component_test.cc)
 
 
 add_executable(main main.cpp ${SOURCE_FILES})

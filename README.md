@@ -8,7 +8,7 @@ This project uses cmake to create a makefile and install catch2. Use the followi
 3. `make` (additionally, you may use `make test` or `make main` to make either executable individually)
 4. `./main`
 
-Please make sure to run any commands related to running the project within the build folder. Additionally, make sure to uncomment the correct lines from main in regards to file path when reading in the graph data.
+**Please make sure to run any commands related to running the project within the build folder. Additionally, make sure to uncomment the correct lines from main in regards to file path when reading in the graph data.**
 
 Currently main will ingest the web graph from and run our algorithms on them. There are commented out lines to print more in-depth information that you can uncomment if you would like to print out the nodes of the graph or all of the connected components of the graph. 
 
@@ -19,6 +19,8 @@ Currently main will ingest the web graph from and run our algorithms on them. Th
 
 *Note: Unfortunately, you will not be able to run the testing suite without cmake as cmake is used to install the catch2 dependency.*
 
+# Graph Data Format
+We have designed our Graph class to ingest graph data from text files. The data must be in the following format. Each line of the file is a node. The first character of the line is a number which is the location of the source node. Then there must be at least one space (there can be more than one space or a tab) then the destination node location is the second number on the line. For an example of this format, you can view datasets in our data folder.
 
 # Running the Test Suite
 To run the testing suite, follow the same instructions as above to build the make files, then simply run:

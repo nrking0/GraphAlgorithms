@@ -68,10 +68,10 @@ RM = /usr/bin/cmake3 -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ep7/cs225git/jhuan35-nrking2-ep7-av13
+CMAKE_SOURCE_DIR = /home/jhuan35/Documents/cs225git/jhuan35-nrking2-ep7-av13
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ep7/cs225git/jhuan35-nrking2-ep7-av13/build
+CMAKE_BINARY_DIR = /home/jhuan35/Documents/cs225git/jhuan35-nrking2-ep7-av13/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,10 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ep7/cs225git/jhuan35-nrking2-ep7-av13/build/CMakeFiles /home/ep7/cs225git/jhuan35-nrking2-ep7-av13/build/CMakeFiles/progress.marks
+
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jhuan35/Documents/cs225git/jhuan35-nrking2-ep7-av13/build/CMakeFiles /home/jhuan35/Documents/cs225git/jhuan35-nrking2-ep7-av13/build/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ep7/cs225git/jhuan35-nrking2-ep7-av13/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jhuan35/Documents/cs225git/jhuan35-nrking2-ep7-av13/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -243,35 +244,30 @@ src/graph.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/graph.cc.s
 .PHONY : src/graph.cc.s
 
-src/page-rank.o: src/page-rank.cc.o
 
-.PHONY : src/page-rank.o
+tests/component_test.o: tests/component_test.cc.o
+.PHONY : tests/component_test.o
 
 # target to build an object file
-src/page-rank.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/page-rank.cc.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/page-rank.cc.o
-.PHONY : src/page-rank.cc.o
+tests/component_test.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/component_test.cc.o
+.PHONY : tests/component_test.cc.o
 
-src/page-rank.i: src/page-rank.cc.i
-
-.PHONY : src/page-rank.i
+tests/component_test.i: tests/component_test.cc.i
+.PHONY : tests/component_test.i
 
 # target to preprocess a source file
-src/page-rank.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/page-rank.cc.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/page-rank.cc.i
-.PHONY : src/page-rank.cc.i
+tests/component_test.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/component_test.cc.i
+.PHONY : tests/component_test.cc.i
 
-src/page-rank.s: src/page-rank.cc.s
-
-.PHONY : src/page-rank.s
+tests/component_test.s: tests/component_test.cc.s
+.PHONY : tests/component_test.s
 
 # target to generate assembly for a file
-src/page-rank.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/page-rank.cc.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/page-rank.cc.s
-.PHONY : src/page-rank.cc.s
+tests/component_test.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/component_test.cc.s
+.PHONY : tests/component_test.cc.s
 
 tests/graph_test.o: tests/graph_test.cc.o
 
@@ -373,9 +369,9 @@ help:
 	@echo "... src/graph.o"
 	@echo "... src/graph.i"
 	@echo "... src/graph.s"
-	@echo "... src/page-rank.o"
-	@echo "... src/page-rank.i"
-	@echo "... src/page-rank.s"
+	@echo "... tests/component_test.o"
+	@echo "... tests/component_test.i"
+	@echo "... tests/component_test.s"
 	@echo "... tests/graph_test.o"
 	@echo "... tests/graph_test.i"
 	@echo "... tests/graph_test.s"
