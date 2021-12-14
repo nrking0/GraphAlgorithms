@@ -77,7 +77,21 @@ namespace finalproject {
             }
         }
     }
-
+    
+    void PageRank::top10Nodes() {
+        vector<pair<double long, int>> vec;
+        for (unsigned int i = 0; i < num_of_nodes; i++) {
+            vec.push_back(make_pair(init_pr_vec[i],i));
+        }
+        sort(vec.begin(), vec.end());
+        vector<pair<double long, int>> topTen(vec.end() - 10, vec.end());
+        reverse(topTen.begin(), topTen.end());
+        cout << "Node       Probability" << endl;
+        for (auto val : topTen) {
+            cout << val.second << "       " << val.first << endl;
+        }
+    }
+       
     long double PageRank::columnSum(int col) {
         long double sum = 0;
         for (unsigned i = 0; i < init_pr_vec.size(); i++) {
