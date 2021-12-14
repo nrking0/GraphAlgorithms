@@ -43,16 +43,19 @@ The following image shows the connected components algorithm running on our grap
 
 ## Page-Rank
 
-* makeMatrix() creates a column-based adjacency matrix based on adjacency list
-* makeMarkov() modifies matrix so that each column sums to 1 
-    * Each entry represents the probability that the node for that column will travel to that entry
-* matrixVectorMultiply(vector x) pre-multiplies given vector by the Markov matrix
-* pagerank() runs power iteration with Markov matrix and arbitrary starting vector
-    * Computes x = Mx for many iterations until x converges to steady-state vector
+* Eigen C++ library is an optimized linear algebra library used for handling large algebraic operations
+* Utilized built-in sparse matrix and vector data structures
+* pageRank constructor creates the transition matrix and arbitrary starting vector
+* runPageRank multiplies transition matrix and starting vector over many iterations until the starting vector's values converge to a stable probability distribution
+    * Computes x = Mx until starting vector converges
+* top10Nodes() displays the top ten nodes or webpages of the graph with it's repsectful probability
 
+The following image shows the top ten webpages with it's probabilities.
+
+![image](./images/pagerank.PNG)
 
 ## Testing Suite
 
 You can review the tests that we wrote for our algorithms and code by reviewing the "/test" directory. Our code has passed all of our test cases. We have ensured that tests pass on our local computers as well as on EWS.
 
-![image](./images/test.png)
+![image](./images/test.PNG)
