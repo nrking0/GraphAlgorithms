@@ -50,6 +50,7 @@ The following image shows the connected components algorithm running on our grap
 * pagerank() runs power iteration with Markov matrix and arbitrary starting vector
     * Computes x = Mx for many iterations until x converges to steady-state vector
 
+![image](./images/pagerank.PNG)
 
 ## Testing Suite
 
