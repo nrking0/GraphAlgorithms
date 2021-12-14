@@ -51,6 +51,7 @@ The following image shows the connected components algorithm running on our grap
 * top10Nodes() displays the top ten nodes or webpages of the graph with it's repsectful probability
 
 The following image shows the top ten webpages with it's probabilities.
+
 ![image](./images/pagerank.PNG)
 
 ## Testing Suite
