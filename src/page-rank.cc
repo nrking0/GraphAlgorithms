@@ -55,9 +55,9 @@ namespace finalproject {
     
     
     void PageRank::runPageRank() {
-        if (num_of_nodes > 10) {
-            cout << "Initial Vector: " << init_pr_vec.head(10).transpose() << endl;
-        }
+        // if (num_of_nodes > 10) {
+        //     cout << "Initial Vector: " << init_pr_vec.head(10).transpose() << endl;
+        // }
         Vector<long double, Dynamic> tempVec;
         for (int i = 0; i < num_iterations; i++) {
             tempVec = init_pr_vec;
@@ -75,6 +75,20 @@ namespace finalproject {
                 cout << "                Sum: " << sum << endl;
                 cout << "                Average Error: " << error.cwiseAbs().sum()/num_of_nodes << endl;
             }
+        }
+    }
+
+    void PageRank::top10Nodes() {
+        vector<pair<double long, int>> vec;
+        for (unsigned int i = 0; i < num_of_nodes; i++) {
+            vec.push_back(make_pair(init_pr_vec[i],i));
+        }
+        sort(vec.begin(), vec.end());
+        vector<pair<double long, int>> topTen(vec.end() - 10, vec.end());
+        reverse(topTen.begin(), topTen.end());
+        cout << "Node       Probability" << endl;
+        for (auto val : topTen) {
+            cout << val.second << "       " << val.first << endl;
         }
     }
 
