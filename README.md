@@ -1,6 +1,8 @@
 # CS225 Final Project
 Final project for **jhuan35, nrking2, ep7, and av13**. For this project we created algorithms to analyze web graphs from the [**Stanford Large Network Dataset Collection**](http://snap.stanford.edu/data/). Our data set is in a text file that can be viewed in the directory labeled *"/data"*. Additionally our main project code can be found in three main directories. The header files are in the "*/include*" directory. Our source files are in the "*/src*" directory. Finally, our test files are in the "*/test*" directory. There is additionally, our "*main.cpp*" file on the top-level of the project. All output of this projects puts results directly into the console.
 
+**Link to presentation: [https://youtu.be/HVypn0YL5H0](https://youtu.be/HVypn0YL5H0)**
+
 # Running the Project
 This project uses cmake to create a makefile and install catch2. Use the following commands to build and run the project:
 1. `cd build`
