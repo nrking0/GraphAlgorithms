@@ -77,11 +77,7 @@ namespace finalproject {
             }
         }
     }
-<<<<<<< HEAD
-
-=======
     
->>>>>>> 8c4f9c189b8c342f57241e29139baa3f3df3d01c
     void PageRank::top10Nodes() {
         vector<pair<double long, int>> vec;
         for (unsigned int i = 0; i < num_of_nodes; i++) {
@@ -95,11 +91,7 @@ namespace finalproject {
             cout << val.second << "       " << val.first << endl;
         }
     }
-<<<<<<< HEAD
-
-=======
        
->>>>>>> 8c4f9c189b8c342f57241e29139baa3f3df3d01c
     long double PageRank::columnSum(int col) {
         long double sum = 0;
         for (unsigned i = 0; i < init_pr_vec.size(); i++) {

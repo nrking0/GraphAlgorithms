@@ -108,14 +108,6 @@ class Graph {
          */
         vector<int> bfsAll();
 
-        // (May or may not need...)
-        std::vector<std::vector<double>> getMatrix();
-        void makeMatrix();
-        void makeMarkov();
-        void printMatrix();
-        vector<double> matrixVectorMultiply(vector<double>& x);
-        vector<double> pagerank();
-
     private:
         // Array of vectors to store graph
         vector<int>* adjacency_list;  
@@ -131,11 +123,6 @@ class Graph {
 
         // Contains distance from arbitrary source to any node. Only is populated after BFS is called with an arbitrary source node.
         vector<int> distance;
-
-        // (May or may not need...)
-        // Matrix for use in pagerank. Store doubles since we will be converting this adjacency matrix into a Markov matrix
-        // Note that this is a COLUMN-based matrix. (edge ij exists <==> a_ji == 1)
-        vector<vector<double>> matrix;
 
         // Overloaded BFS helper function to be used in bfsAll function
         void BFS(int source, vector<bool>& visited, vector<int>& traversal);

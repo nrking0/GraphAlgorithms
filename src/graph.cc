@@ -190,7 +190,6 @@ std::vector<int> Graph::getShortestPath(int dest) {
     return to_return;
 }
 
-
 // Uses the private helper BFS function to run BFS on every single node. 
 // In contrast, the BFS(int source) function only traverses one weakly connected component.
 std::vector<int> Graph::bfsAll() {
@@ -235,95 +234,6 @@ void Graph::BFS(int source, vector<bool>& visited, vector<int>& traversal) {
             }
         }
     }
-}
-
-std::vector<std::vector<double>> Graph::getMatrix() {
-    return matrix;
-}
-
-// Populates matrix private variable using adjacency list. Adj list must be already populated.
-// This constructs a COLUMN-based matrix.
-void Graph::makeMatrix() {
-    matrix.resize(nodes);
-    for (int i = 0; i < (int) matrix.size(); ++i) {
-        matrix[i].resize(nodes);
-    }
-
-    for (int i = 0; i < nodes; ++i) {
-        for (int j = 0; j < (int) adjacency_list[i].size(); ++j) {
-            matrix[adjacency_list[i][j]][i] = 1.0;
-        }
-    }
-}
-
-// Changes the populated matrix into a Markov matrix where the entries represent probabilities and the sum of each column = 1
-void Graph::makeMarkov() {
-    double column_sum = 0.0;
-    for (int col = 0; col < nodes; ++col) {
-        column_sum = 0.0;
-        for (int row = 0; row < nodes; ++row) {
-            column_sum += matrix[row][col];
-        }
-        // We want to divide every entry in each column by the column sum, but we can't if the sum is 0. So instead we assign equal probability to each entry.
-        if (column_sum == 0.0) {
-            for (int row = 0; row < nodes; ++row) {
-                matrix[row][col] = 1.0 / ((double) nodes);
-            }
-        } else {
-            for (int row = 0; row < nodes; ++row) {
-                matrix[row][col] /= column_sum;
-            }
-        }
-    }
-}
-
-void Graph::printMatrix() {
-    for (int row = 0; row < nodes; ++row) {
-        for (int col = 0; col < nodes; ++col) {
-            if (col == 0) {
-                std::cout << "| " << matrix[row][col];
-            } else if (col == nodes - 1) {
-                std::cout << " " << matrix[row][col] << " |" << std::endl;
-            } else {
-                std::cout << " " << matrix[row][col];
-            }
-        }
-    }
-}
-
-std::vector<double> Graph::matrixVectorMultiply(vector<double>& x) {
-    std::vector<double> result;
-    result.resize(nodes);
-    if ((int) x.size() != nodes) {
-        std::cout << "Argument vector does not have valid shape" << std::endl;
-        return result;
-    }
-    double dot_product = 0.0;
-    for (int row = 0; row < nodes; ++row) {
-        dot_product = 0.0;
-        for (int col = 0; col < nodes; ++col) {
-            dot_product += matrix[row][col] * x[col];
-        }
-        result[row] = dot_product;
-    }
-    return result;
-}
-
-// Input is an arbitrary starting vector whose sum is 1
-std::vector<double> Graph::pagerank() {
-    std::vector<double> steady_state_vector;
-
-    // Initialize vector arbitrarily (but it's sum must be 1)
-    for (int i = 0; i < nodes; ++i) {
-        steady_state_vector[i] = 1.0 / ((double) nodes);
-    }
-
-    // Pre-mulipty vector by Markov matrix many times until vector converges
-    for (int i = 0; i < 1000; ++i) {
-        steady_state_vector = matrixVectorMultiply(steady_state_vector);
-    }
-
-    return steady_state_vector;
 }
 
 }
