@@ -9,3 +9,6 @@ For week 3 we finalized our new ideas for the adapted project proposal. We decid
 
 # Week 4
 For week 4 we started working on implementing algorithms. We started development of the connected components algorithm. More specifically we used Kosaraju's algorithm that uses two DFS traversals of the graph to identify all of the different connected components in the graph. Additionally, we created a shortest path algorithm utilizing a BFS traversal of the graph. This will return the shortest path between any two nodes of the graph. Finally, we also started work on building out some tests for the different algorithms that we were implementing.
+
+# Week 5
+We completed a lot of tasks in the final week. We implmented the PageRank algorithm by using the Eigen library. We wrote a page-rank class that performs this algorithm by representing our adjacency list as a sparse matrix, transforming it into a transition matrix that represents probabilities of going to nodes, and then running power iteration with the transition matrix to find the steady-state vector. We also wrote a lot more tests for BFS, getShortestPath, Kosaraju's, and Page Rank. We added many comments for the graph class. We completed a Google Presentation for our project and then met together as a group to record our video. 

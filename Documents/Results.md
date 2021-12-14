@@ -1,5 +1,7 @@
 # Project Results
 
+**Link to presentation: [https://youtu.be/HVypn0YL5H0](https://youtu.be/HVypn0YL5H0)**
+
 By the end of this project, we were able to successfully implement our algorithms to work with graph data. There were certainly aspects of the project that were more challenging than expected, but through problem-solving and working together we were able to ensure that none of our algorithms were unable to run. This document will go through each deliverable and explain it more in-depth.
 
 ## Graph Class and Project Setup
@@ -50,9 +52,10 @@ The following image shows the connected components algorithm running on our grap
 * pagerank() runs power iteration with Markov matrix and arbitrary starting vector
     * Computes x = Mx for many iterations until x converges to steady-state vector
 
+![image](./images/pagerank.PNG)
 
 ## Testing Suite
 
 You can review the tests that we wrote for our algorithms and code by reviewing the "/test" directory. Our code has passed all of our test cases. We have ensured that tests pass on our local computers as well as on EWS.
 
-![image](./images/test.png)
+![image](./images/test.PNG)

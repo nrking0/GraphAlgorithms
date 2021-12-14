@@ -103,7 +103,7 @@ void ConnectedComponent::printLargest() {
     int index = 0;
     int maxIndex = 0;
      for (vector<int> vec : *components) {
-        if ((int) vec.size() > max) {
+        if ((unsigned int) vec.size() > max) {
             max = vec.size();
             maxIndex = index;
         }
@@ -115,7 +115,7 @@ void ConnectedComponent::printLargest() {
         unsigned int i = 0;
         vector<int> vec = components->at(maxIndex);
         for (int a : vec) {
-            if (i == (int) vec.size() - 1) cout << a;
+            if (i == (unsigned int) vec.size() - 1) cout << a;
             else cout << a << ", ";
             i++;
         }
