@@ -26,7 +26,7 @@ class PageRank {
     unsigned int getNumOfNodes();
     SparseMatrix<long double> getTransMatrix();
     Vector<long double, Dynamic> getInitVec();
-
+    void top10Nodes();
 
 
     private:
