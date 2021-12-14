@@ -1,7 +1,5 @@
 # Project Results
 
-**Link to presentation: [https://youtu.be/HVypn0YL5H0](https://youtu.be/HVypn0YL5H0)**
-
 By the end of this project, we were able to successfully implement our algorithms to work with graph data. There were certainly aspects of the project that were more challenging than expected, but through problem-solving and working together we were able to ensure that none of our algorithms were unable to run. This document will go through each deliverable and explain it more in-depth.
 
 ## Graph Class and Project Setup
@@ -51,6 +49,14 @@ The following image shows the connected components algorithm running on our grap
 * matrixVectorMultiply(vector x) pre-multiplies given vector by the Markov matrix
 * pagerank() runs power iteration with Markov matrix and arbitrary starting vector
     * Computes x = Mx for many iterations until x converges to steady-state vector
+
+* Eigen C++ library is an optimized linear algebra library used for handling large algebraic operations
+* Utilized built-in sparse matrix and vector data structures
+* pageRank constructor creates the transition matrix and arbitrary starting vector
+* runPageRank multiplies transition matrix and starting vector over many iterations until the starting vector's values converge to a stable probability distribution
+    * Computes x = Mx until starting vector converges
+* top10Nodes() displays the top ten nodes or webpages of the graph with it's repsectful probability
+The following image shows the top ten webpages with it's probabilities.
 
 ![image](./images/pagerank.PNG)
 
